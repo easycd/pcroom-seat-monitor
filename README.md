@@ -164,7 +164,33 @@ pcroom-seat-monitor/
 
 ## 개발 환경 설정 및 실행
 
-### 공개 소스의 API 설정
+### 공개 저장소에서 제외한 항목과 이유
+
+실제 서비스 설정을 공개 코드와 분리하기 위해 아래 항목을 Git 추적에서 제외했습니다. 설정 파일은 로컬에 보존했으며, 공개 저장소는 이전 설정이 담긴 커밋을 포함하지 않는 새 이력으로 올렸습니다.
+
+| 제외한 항목 | 제외 이유 | 로컬 설정 방법 |
+|---|---|---|
+| 이용자 앱의 실제 Firebase `google-services.json` | API 키, 프로젝트·앱 식별자, DB·Storage 주소 등 실제 Firebase 프로젝트 설정을 공개 소스와 분리하기 위해 | `information/app/google-services.json`에 직접 배치 |
+| 좌석 정보 전달 앱의 실제 Firebase `google-services.json` | 실제 Firebase 프로젝트 설정이 공개 저장소에 포함되지 않도록 하기 위해 | `seat_information3/app/google-services.json`에 직접 배치 |
+| 네이버 지도 Client ID의 실제 값 | 운영 중인 지도 서비스 식별값을 코드에 고정하거나 Git에 올리지 않도록 하기 위해 | `information/local.properties`의 `NAVER_MAP_CLIENT_ID` 또는 같은 이름의 환경변수로 설정 |
+
+이용자 앱 Firebase 파일의 기존 위치는 `information/app/src/google-services.json`이었으며, 해당 파일도 추적에서 제외했습니다. 실행에 사용할 파일은 위 표의 `app/` 경로에 배치합니다. `AndroidManifest.xml` 자체는 공개하며, 지도 ID 자리에는 `${NAVER_MAP_CLIENT_ID}` placeholder만 남겨 Gradle이 로컬 설정값을 전달합니다.
+
+아래 파일 종류도 `.gitignore`에서 제외합니다. 인증정보 관련 패턴은 앞으로 실수로 추가되는 것을 방지하기 위한 규칙이며, 해당 비밀키가 실제 저장소에 있었다는 뜻은 아닙니다.
+
+| Git에서 제외하는 파일 종류 | 제외 이유 |
+|---|---|
+| Firebase Admin SDK·서비스 계정 JSON (`*firebase-adminsdk*.json`, `service-account*.json`, `serviceAccount*.json`) | 서버 관리자 권한을 가진 인증정보가 공개되는 것을 방지 |
+| 서명 키·개인키 (`*.jks`, `*.keystore`, `*.p12`, `*.pem`, `*.key`, `*.pfx`) | 앱 서명 및 인증에 사용하는 개인키 보호 |
+| 비밀번호·환경 설정 (`keystore.properties`, `secrets.properties`, `.env`, `.env.*`) | 토큰·비밀번호 등 로컬 인증정보가 커밋되는 것을 방지. `.env.example`은 실제 값 없는 예시만 허용 |
+| `local.properties` | 개인 PC의 Android SDK 경로와 지도 Client ID 등 로컬 설정 분리 |
+| 빌드 결과·캐시 (`build/`, `.gradle/`, `.cxx/`, `.externalNativeBuild/`, `*.apk`, `*.aab`) | 소스에서 다시 생성되는 파일을 제외하고, 빌드에 포함된 실제 설정이 함께 올라가는 것을 방지 |
+| IDE·OS 파일 (`.idea/`, `*.iml`, `.vscode/`, `.DS_Store`, `Thumbs.db`, `Desktop.ini`) | 개인 개발 환경과 불필요한 시스템 파일 제외 |
+| 로그·메모리 덤프 (`*.log`, `*.hprof`) | 실행 중 기록된 데이터나 인증정보가 공개되는 것을 방지 |
+
+Firebase 클라이언트 API 키와 네이버 지도 Client ID는 앱에 포함되는 식별값이며, 서버 관리자 비밀키와는 구분됩니다. 이번 제외는 실제 프로젝트 설정을 공개 소스에 남기지 않기 위한 조치입니다. 앱 실행 시에는 해당 값이 포함되므로 Firebase 접근 규칙과 API 사용 제한은 별도로 관리해야 합니다.
+
+### 로컬 API 설정
 
 실제 Firebase `google-services.json` 파일과 네이버 지도 Client ID는 공개 소스에서 제외했습니다. 설정 파일은 각 Android 프로젝트의 `app/google-services.json`에 직접 배치해야 합니다. 이 파일은 `.gitignore`로 제외됩니다.
 
