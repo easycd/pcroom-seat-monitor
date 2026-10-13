@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/main"
+    android:weightSum="10">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/main"
+                android:layout_margin="10dp"
+                android:text="즐겨찾기"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:gravity="center"/>
+        </LinearLayout>
+        <View
+            android:id="@+id/menuline"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/gray"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_below="@+id/menutext"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="9">
+        <!--나사렛 피시방-->
+            <RelativeLayout
+                android:id="@+id/Infobtn"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/border_layout"
+                android:elevation="2dp">
+
+                <Button
+                    android:id="@+id/seat_1"
+                    android:layout_width="75dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/seat_buttonlayout"
+                    android:elevation="2dp"
+                    android:text="자리현황"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/Mainname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="나사렛 피시방"
+                    android:layout_centerVertical="true"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@+id/Mainname"
+                    android:layout_centerVertical="true">
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="이용가능 좌석: "
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:id="@+id/Seat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="3dp"
+                            android:text="60"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="3dp"
+                            android:text="/"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/Seatcount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="39"
+                            android:textColor="@color/blue"
+                            android:textStyle="bold" />
+                    </TableRow>
+                </TableLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Infobtn1"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/border_layout"
+                android:elevation="2dp"
+                android:layout_margin="10dp">
+
+                <Button
+                    android:id="@+id/seat_2"
+                    android:layout_width="75dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/seat_buttonlayout"
+                    android:elevation="2dp"
+                    android:text="자리현황"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/Mainname1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="WOW 피시방"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@+id/Mainname1"
+                    android:layout_centerVertical="true">
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="이용가능 좌석: "
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:id="@+id/Seat1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="3dp"
+                            android:text="86"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="3dp"
+                            android:text="/"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/Seatcount1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="26"
+                            android:textColor="@color/blue"
+                            android:textStyle="bold" />
+                    </TableRow>
+                </TableLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:elevation="10dp"
+            android:background="@color/white">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TableRow>
+
+                    <ImageButton
+                        android:id="@+id/homebtn"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="30dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/home" />
+                    <ImageButton
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/event"
+                        android:id="@+id/eventbtn"
+                        android:layout_marginLeft="65dp"/>
+                    <ImageButton
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/heart"
+                        android:id="@+id/favoritebtn"
+                        android:layout_marginLeft="65dp"/>
+                    <ImageButton
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/back"
+                        android:id="@+id/backbtn"
+                        android:layout_marginLeft="65dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="홈"
+                        android:layout_marginLeft="36dp"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="이벤트"
+                        android:layout_marginLeft="64dp"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="즐겨찾기"
+                        android:layout_marginLeft="65dp"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="뒤로가기"
+                        android:layout_marginLeft="63dp"
+                        android:textSize="12dp"
+                        />
+                </TableRow>
+            </TableLayout>
+        </RelativeLayout>
+</LinearLayout>
+</LinearLayout>
+</LinearLayout>

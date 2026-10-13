@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/main"
+    android:weightSum="10"
+    tools:context=".event">
+
+    <FrameLayout
+        android:id="@+id/eventframe"
+        android:layout_width="wrap_content"
+        android:layout_height="750dp"
+        android:layout_below="@+id/choosebtn"/>
+
+    <LinearLayout
+    android:id="@+id/choosebtn"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이벤트"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:padding="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/Ing"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@color/main"
+            android:text="진행중"/>
+
+        <Button
+            android:id="@+id/End"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main"
+            android:layout_marginRight="10dp"
+            android:text="종료된 이벤트"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:elevation="10dp"
+        android:background="@color/white">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp">
+            <TableRow>
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/home"
+                    android:id="@+id/homebtn"
+                    android:layout_marginLeft="30dp"/>
+
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/event"
+                    android:id="@+id/eventbtn"
+                    android:layout_marginLeft="65dp"/>
+
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/heart"
+                    android:id="@+id/favoritebtn"
+                    android:layout_marginLeft="65dp"/>
+
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/back"
+                    android:id="@+id/backbtn"
+                    android:layout_marginLeft="65dp"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="홈"
+                    android:layout_marginLeft="36dp"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="이벤트"
+                    android:layout_marginLeft="64dp"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="즐겨찾기"
+                    android:layout_marginLeft="65dp"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="뒤로가기"
+                    android:layout_marginLeft="63dp"
+                    android:textSize="12dp" />
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

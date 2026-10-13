@@ -1,0 +1,41 @@
+# Android / Gradle generated files
+**/build/
+**/.gradle/
+**/.cxx/
+**/.externalNativeBuild/
+*.apk
+*.aab
+
+# Local SDK and IDE settings
+**/local.properties
+**/.idea/
+*.iml
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Signing keys and local credentials
+*.jks
+*.keystore
+*.p12
+*.pem
+.env
+.env.*
+!.env.example
+
+# Actual service configuration and administrator credentials
+**/google-services.json
+**/*firebase-adminsdk*.json
+**/service-account*.json
+**/serviceAccount*.json
+**/keystore.properties
+**/secrets.properties
+*.key
+*.pfx
+
+# Local logs and memory dumps
+*.log
+*.hprof

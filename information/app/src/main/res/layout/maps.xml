@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Maps">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="9">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <fragment
+        android:id="@+id/map_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.naver.maps.map.MapFragment">
+    </fragment>
+
+    <com.naver.maps.map.widget.LocationButtonView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" />
+
+    <com.naver.maps.map.widget.ZoomControlView
+        android:id="@+id/zoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location"
+        android:layout_alignParentRight="true"/>
+
+    <com.naver.maps.map.widget.CompassView
+        android:id="@+id/compass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zoom"
+        android:layout_alignParentRight="true"/>
+
+    <com.naver.maps.map.widget.ScaleBarView
+        android:id="@+id/scalebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/compass"
+        android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:elevation="10dp"
+        android:background="@color/white">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp">
+
+            <TableRow>
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/home"
+                    android:id="@+id/homebtn"
+                    android:layout_marginLeft="30dp"/>
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/event"
+                    android:id="@+id/eventbtn"
+                    android:layout_marginLeft="65dp"/>
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/heart"
+                    android:id="@+id/favoritebtn"
+                    android:layout_marginLeft="65dp"/>
+
+                <ImageButton
+                    android:id="@+id/backbtn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="65dp"
+                    android:background="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/back"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="홈"
+                    android:layout_marginLeft="36dp"
+                    android:textSize="12dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="이벤트"
+                    android:layout_marginLeft="64dp"
+                    android:textSize="12dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="즐겨찾기"
+                    android:layout_marginLeft="65dp"
+                    android:textSize="12dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="뒤로가기"
+                    android:layout_marginLeft="63dp"
+                    android:textSize="12dp"
+                    />
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

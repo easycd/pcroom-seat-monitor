@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.information">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".information"
+            android:label="정보페이지" />
+        <activity
+            android:name=".event"
+            android:label="이벤트페이지" />
+        <activity
+            android:name=".Maps"
+            android:label="맵" />
+        <activity
+            android:name=".OPGG"
+            android:label="opgg" />
+        <activity
+            android:name=".FOW"
+            android:label="fow" />
+        <activity
+            android:name=".DAK"
+            android:label="dak" />
+        <activity
+            android:name=".Seat_information"
+            android:label="자리현황" />
+        <activity
+            android:name=".Gameinfo"
+            android:label="게임정보" />
+        <activity
+            android:name=".cummunity"
+            android:label="게임정보" />
+        <activity
+            android:name=".NOtice"
+            android:label="게임정보" />
+        <activity
+            android:name=".favorite"
+            android:label="게임정보" />
+
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="${NAVER_MAP_CLIENT_ID}" />
+    </application>
+
+</manifest>

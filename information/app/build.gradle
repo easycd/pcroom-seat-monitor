@@ -1,0 +1,74 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+// Keep the actual map client ID in ignored local.properties or an environment variable.
+def localMapProperties = new Properties()
+def localMapPropertiesFile = rootProject.file('local.properties')
+if (localMapPropertiesFile.exists()) {
+    localMapPropertiesFile.withInputStream { localMapProperties.load(it) }
+}
+def naverMapClientId = System.getenv('NAVER_MAP_CLIENT_ID') ?:
+        localMapProperties.getProperty('NAVER_MAP_CLIENT_ID', '')
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.example.information"
+        minSdk 26
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        manifestPlaceholders = [NAVER_MAP_CLIENT_ID: naverMapClientId]
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'com.naver.maps:map-sdk:3.14.0'
+    implementation 'com.google.android.gms:play-services-location:20.0.0'
+
+    implementation 'com.google.android.material:material:1.8.0-alpha02'
+
+    //firebase 추가 코드
+    implementation platform('com.google.firebase:firebase-bom:31.0.0')
+
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-database:20.0.4'
+    implementation 'com.google.firebase:firebase-firestore:24.4.0'
+    implementation 'androidx.navigation:navigation-fragment:2.5.2'
+    implementation 'androidx.navigation:navigation-ui:2.5.2'
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+}

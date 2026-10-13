@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".MainActivity">
+
+
+    <!--    메인 이미지-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:layout_weight="1">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="135dp"
+            android:src="@drawable/main_icon"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"/>
+    </LinearLayout>
+
+
+    <!--    스크롤 뷰-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="9">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:id="@+id/scrollView"
+        android:layout_weight="8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--피시방 내부 사진-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/room1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/border_layout"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/Roomname"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:text="나사렛 피시방"
+                    android:textColor="@color/black"
+                    android:textSize="30dp" />
+
+
+                <!--                즐겨찾기-->
+                <ToggleButton
+                    android:id="@+id/bookmark"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/emptyheart"/>
+
+                <!--                주소-->
+                <TableLayout
+                    android:id="@+id/Location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Roomname"
+                    android:layout_alignLeft="@+id/Roomname"
+                    android:layout_marginTop="5dp">
+
+                    <TableRow>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/map" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="충청남도 천안시 서북구 월봉로 48" />
+                    </TableRow>
+                </TableLayout>
+
+
+                <!--                리뷰-->
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/Location"
+                    android:layout_alignLeft="@+id/Location"
+                    android:layout_marginTop="35dp">
+
+                    <TableRow>
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/able" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4.5"
+                            android:textColor="@color/black"
+                            android:textSize="25dp" />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="25dp"
+                            android:src="@drawable/pc" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4.2"
+                            android:textColor="@color/black"
+                            android:textSize="25dp" />
+                    </TableRow>
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="13dp">
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="3dp"
+                            android:textStyle="bold"
+                            android:text="시간당: "
+                            android:textColor="@color/timeprice"
+                            android:textSize="13dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="1,200원"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                    </TableRow>
+                </TableLayout>
+            </RelativeLayout>
+
+            <!--            가게 소개-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/border_layout"
+                android:elevation="2dp">
+
+                <TableLayout
+                    android:id="@+id/massage"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_margin="15dp">
+
+                    <TableRow>
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="30dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/storemassage" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="공지"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+                    </TableRow>
+
+                </TableLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/massage"
+                    android:layout_alignLeft="@+id/massage"
+                    android:layout_marginBottom="10dp"
+                    android:text="안녕하세요 저희 피시방은 학교랑 매우 가깝고 청결과 좋은  서비스를 제공하고있는 피시방입니다. 이벤트도 자주하니 많이 이용해주세요~~"
+                    android:textColor="@color/black" />
+
+            </RelativeLayout>
+
+
+            <!--            PC사양-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/border_layout"
+                android:elevation="2dp"
+                android:orientation="vertical">
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp">
+                    <TableRow>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="23dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/pc" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="PC 사양"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+                    </TableRow>
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp">
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="• CPU: i7 9700"
+                            android:textColor="@color/black" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="• RAM: 16GB"
+                            android:textColor="@color/black" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="• VGA: RTX3060"
+                            android:textColor="@color/black" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="• SSD: NO HDD"
+                            android:textColor="@color/black" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="• 모니터: LG27인치 144HZ"
+                            android:textColor="@color/black" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="• 마우스: 로지텍 G102"
+                            android:textColor="@color/black" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="• 키보드: 청축 기계식 키보드"
+                            android:textColor="@color/black" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+<!--            메뉴-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/border_layout"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/menutext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="FOOD"
+                    android:textSize="18dp"
+                    android:textColor="@color/black" />
+                <View
+                    android:id="@+id/menuline"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/gray"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_below="@+id/menutext"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/menuline"
+                    android:layout_marginBottom="10dp"/>
+            </RelativeLayout>
+
+            <!--            리뷰 작성-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/border_layout"
+                android:elevation="2dp">
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:text="리뷰 작성"
+                            android:textColor="@color/black" />
+
+                        <EditText
+                            android:layout_width="220dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/send_text"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp" />
+
+                        <Button
+                            android:id="@+id/Reviewbtn"
+                            android:layout_width="60dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:text="입력" />
+                    </TableRow>
+                </TableLayout>
+            </RelativeLayout>
+
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:layout_margin="10dp"
+                    android:elevation="2dp"
+                    android:background="@drawable/border_layout"
+                    android:id="@+id/rv_data"/>
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+
+
+    <!--    하단 네비게이션 바-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="10dp"
+        android:background="@color/white">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp">
+
+            <TableRow>
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/home"
+                    android:id="@+id/homebtn"
+                    android:layout_marginLeft="30dp"/>
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/event"
+                    android:id="@+id/eventbtn"
+                    android:layout_marginLeft="65dp"/>
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/heart"
+                    android:id="@+id/favoritebtn"
+                    android:layout_marginLeft="65dp"/>
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/back"
+                    android:id="@+id/backbtn"
+                    android:layout_marginLeft="65dp"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="홈"
+                    android:layout_marginLeft="36dp"
+                    android:textSize="12dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="이벤트"
+                    android:layout_marginLeft="64dp"
+                    android:textSize="12dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="즐겨찾기"
+                    android:layout_marginLeft="65dp"
+                    android:textSize="12dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="뒤로가기"
+                    android:layout_marginLeft="63dp"
+                    android:textSize="12dp"
+                    />
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
